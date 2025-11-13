@@ -23,6 +23,8 @@ jobs:
           echo PORTABLE=https://github.com/ell1010/wincompose/releases/download/v${{ env.VERSION }}/WinCompose-NoInstall-${{ env.VERSION }}.exe >> ${{ github.env }}
           echo PORTABLESHA256=$(sha256sum assets/WinCompose-NoInstall-${{ env.VERSION }}.exe) >> ${{ github.env }}
           echo PORTABLEMD5=$(md5sum assets/WinCompose-NoInstall-${{ env.VERSION }}.exe) >> ${{ github.env }}
+      - name: remove assets
+        run: rm -rf ${{ github.workspace }}/assets
       - name: checkout
         uses: actions/checkout@v5
         with:
@@ -36,7 +38,6 @@ jobs:
           sed -i 's/Portable/Portable;' status.txt
           sed -i 's/PortableSHA256/PortableSHA256;' status.txt
           sed -i 's/PortableMD5/PortableMD5;' status.txt
-        run: |
           sed -i '3i\Latest: ${{ env.VERSION }}' status.txt
           sed -i '4i\Installer: ${{ env.INSTALLER }}' status.txt
           sed -i '5i\InstallerSHA256: ${{ env.INSTALLERSHA256 }}' status.txt
