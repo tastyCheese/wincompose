@@ -128,7 +128,7 @@ static class Updater
         {
             WebClient browser = new WebClient();
             browser.Headers.Add("user-agent", GetUserAgent());
-            using (Stream s = browser.OpenRead("http://wincompose.info/status.txt"))
+            using (Stream s = browser.OpenRead("https://raw.githubusercontent.com/ell1010/wincompose/refs/heads/main/status.txt"))
             using (StreamReader sr = new StreamReader(s))
             {
                 m_data.Clear();

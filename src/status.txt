@@ -1,0 +1,30 @@
+Updates: https://github.com/ell1010/wincompose/releases
+
+Latest: 0.9.15.1
+Installer: https://github.com/ell1010/wincompose/releases/download/v0.9.14/WinCompose-Setup-0.9.15.1.exe
+InstallerSHA256: 0b6b3a617b9192c30bcd8f3ac13b34e5aeda3fbd04d893fc66bb2f9864992da6 WinCompose-Setup-0.9.15.1.exe
+InstallerMD5: c99c72a081dcdac047cafcf089b101c8  WinCompose-Setup-0.9.15.1.exe
+Portable: https://github.com/ell1010/wincompose/releases/download/v0.9.14/WinCompose-NoInstall-0.9.15.1.zip
+PortableSHA256: 441174731be3ec0f964f419efabbd5930d9974dfb0dc3849edb755e5f8035cac  WinCompose-NoInstall-0.9.15.1.zip
+PortableMD5: f76d8c02cabc1e285503624cd6025d9c  WinCompose-NoInstall-0.9.15.1.zip
+
+; Latest: 0.9.15
+; Installer: https://github.com/ell1010/wincompose/releases/download/v0.9.14/WinCompose-Setup-0.9.15.exe
+; InstallerSHA256: e669ec453880d592f440a8232ce402b1a5d0088018dec210e0200a031a9f5eb9 WinCompose-Setup-0.9.15.exe
+; InstallerMD5: c6c265074c78595abe56f671af932073  WinCompose-Setup-0.9.15.exe
+; Portable: https://github.com/ell1010/wincompose/releases/download/v0.9.14/WinCompose-NoInstall-0.9.15.zip
+; PortableSHA256: cff35118d1ad2aa98b27f0f1779129e7a098b2ad843b49ee669567c9269753a4 WinCompose-NoInstall-0.9.15.zip
+; PortableMD5: b4e7352c0f79014092bf1ff7fce6bcb7  WinCompose-NoInstall-0.9.15.zip
+
+; Latest: 0.9.14.1
+; Installer: https://github.com/ell1010/wincompose/releases/download/v0.9.14/WinCompose-Setup-0.9.14.1.exe
+; InstallerSHA256: 9d245ac66a07b81d48508989d3d3924992f5c7432b892efaaf126a648e6b752d WinCompose-Setup-0.9.14.1.exe
+; InstallerMD5: f8c182ce2390e27ef978b820a735ddf0  WinCompose-Setup-0.9.14.1.exe
+
+; Latest: 0.9.14
+; Installer: https://github.com/ell1010/wincompose/releases/download/v0.9.14/WinCompose-Setup-0.9.14.exe
+; InstallerSHA256: 7ba02998c2bba765103f7f3df26c0a0b3e7bf4549b860eab7c2989fc4b923cd4 WinCompose-Setup-0.9.14.exe
+; InstallerMD5: 48c9b89aaa766dfd7b000bf09210a192  WinCompose-Setup-0.9.14.exe
+; Portable: https://github.com/ell1010/wincompose/releases/download/v0.9.14/WinCompose-NoInstall-0.9.14.zip
+; PortableSHA256: 0fd3a6f91d704dc92bebbf23a716c8bd99476d75dd6d6faf6df8552b025cbc0b WinCompose-NoInstall-0.9.14.zip
+; PortableMD5: 3c5087c0da5ddef2b3c2f2e02ee3adbb  WinCompose-NoInstall-0.9.14.zip

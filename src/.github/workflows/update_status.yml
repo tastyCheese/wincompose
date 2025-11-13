@@ -1,0 +1,49 @@
+name: Update status.txt
+on: 
+  release:
+    types: [published]
+    
+jobs: 
+  update_status:
+    runs-on: ubuntu-latest
+    permissions: 
+      contents: write
+    steps:
+      - name: save version number in env
+        run: echo VERSION=$(echo ${{ github.ref }} | cut -c2-) >> ${{ github.env }}
+      - name: download release assets
+        uses: robinraju/release-downloader@v1
+        with:
+          out-file-path: assets
+      - name: calculate checksums
+        run: |
+          echo INSTALLER=https://github.com/ell1010/wincompose/releases/download/v${{ env.VERSION }}/WinCompose-Setup-${{ env.VERSION }}.exe >> ${{ github.env }}
+          echo INSTALLERSHA256=$(sha256sum assets/WinCompose-Setup-${{ env.VERSION }}.exe) >> ${{ github.env }}
+          echo INSTALLERMD5=$(md5sum assets/WinCompose-Setup-${{ env.VERSION }}.exe) >> ${{ github.env }}
+          echo PORTABLE=https://github.com/ell1010/wincompose/releases/download/v${{ env.VERSION }}/WinCompose-NoInstall-${{ env.VERSION }}.exe >> ${{ github.env }}
+          echo PORTABLESHA256=$(sha256sum assets/WinCompose-NoInstall-${{ env.VERSION }}.exe) >> ${{ github.env }}
+          echo PORTABLEMD5=$(md5sum assets/WinCompose-NoInstall-${{ env.VERSION }}.exe) >> ${{ github.env }}
+      - name: checkout
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.head_ref }}
+      - name: modify status.txt
+        run: |
+          sed -i 's/Latest/Latest;' status.txt
+          sed -i 's/Installer/Installer;' status.txt
+          sed -i 's/InstallerSHA256/InstallerSHA256;' status.txt
+          sed -i 's/InstallerMD5/InstallerMD5;' status.txt
+          sed -i 's/Portable/Portable;' status.txt
+          sed -i 's/PortableSHA256/PortableSHA256;' status.txt
+          sed -i 's/PortableMD5/PortableMD5;' status.txt
+        run: |
+          sed -i '3i\Latest: ${{ env.VERSION }}' status.txt
+          sed -i '4i\Installer: ${{ env.INSTALLER }}' status.txt
+          sed -i '5i\InstallerSHA256: ${{ env.INSTALLERSHA256 }}' status.txt
+          sed -i '6i\InstallerMD5: ${{ env.INSTALLERMD5 }}' status.txt
+          sed -i '7i\Portable: ${{ env.PORTABLE }}' status.txt
+          sed -i '8i\PortableSHA256: ${{ env.PORTABLESHA256 }}' status.txt
+          sed -i '9i\PortableMD5: ${{ env.PORTABLEMD5 }}' status.txt
+          sed -i '10i\\' status.txt
+      - name: commit and push
+        uses: stefanzweifel/git-auto-commit-action@v7
