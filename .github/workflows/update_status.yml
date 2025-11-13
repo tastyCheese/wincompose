@@ -14,7 +14,7 @@ jobs:
       - name: download release assets
         uses: robinraju/release-downloader@v1
         with:
-          out-file-path: assets
+          out-file-path: 'assets'
       - name: calculate checksums
         run: |
           echo INSTALLER=https://github.com/ell1010/wincompose/releases/download/v${{ env.VERSION }}/WinCompose-Setup-${{ env.VERSION }}.exe >> ${{ github.env }}
